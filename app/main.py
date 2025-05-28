@@ -1,4 +1,5 @@
 from __future__ import annotations
+from typing import List, Tuple
 
 
 class Deck:
@@ -58,10 +59,7 @@ class Ship:
 
 
 class Battleship:
-    def __init__(
-            self,
-            ships: Ship
-    ) -> None:
+    def __init__(self, ships: List[Tuple[Tuple[int, int], Tuple[int, int]]]) -> None:
         self.ships = [Ship(start, end) for start, end in ships]
         self.field = [["~" for _ in range(10)] for _ in range(10)]
 
